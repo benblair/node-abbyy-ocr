@@ -1,2 +1,2 @@
 
-module.exports = require('./abby-ocr');
+module.exports = require('./abbyy-ocr');

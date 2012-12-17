@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var program = require('commander');
+var AbbyyOcr = require('../');
+
+
+program
+    .version(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version)
+    .option('-a, --app <app-id>', 'specify your AppID')
+    .option('-p, --password <password>', 'your OCRSDK-provided password')
+    .option('-i, --input <file>', 'input image file')
+    .option('-o, --output [file]', 'output file, or send to console')
+    .parse(process.argv);
+
+if (!program.app) {
+    console.log('Must specify app with -a option.');
+    return;
+}
+if (!program.password) {
+    console.log('Must specify password with -p option.');
+    return;
+}
+
+
+var ocr = new AbbyyOcr(program.app, program.password);
+
+var options = {
+    imagePath: program.input,
+    statusCallback: function(err, status) { console.log(status); }
+};
+
+if (program.output) {
+    options.outputPath = program.output;
+}
+
+ocr.processImage(options, function(err, text) {
+    if (err) {
+        console.log('Error', err);
+        return;
+    }
+
+    if (text) {
+        console.log(text);
+    }
+})
