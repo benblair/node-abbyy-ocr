@@ -1,24 +1,35 @@
 {
   "author": "Ben Blair <benblair@gmail.com>",
   "name": "abbyy-ocr",
-  "description": "Node module for calling ABBYY's OCR-SDK. See http://ocrsdk.com/",
-  "version": "0.0.2",
+  "description": "Unofficial node module for calling ABBYY's OCR-SDK. See http://ocrsdk.com/",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/benblair/node-abbyy-ocr.git"
   },
+  "bugs": "http://github.com/benblair/node-abbyy-ocr/issues",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
+  },
+  "bin": {
+    "abbyy-ocr": "./bin/abbyy-ocr"
   },
   "dependencies": {
     "xml2js": "~0.2.2",
     "request": "~2.12.0",
     "commander": "~1.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "1.7.x"
+  },
   "optionalDependencies": {},
   "engines": {
     "node": "*"
-  }
+  },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT" 
+  } ],
+  "keywords": ["ocr", "abbyy"]
 }

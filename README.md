@@ -17,7 +17,7 @@ Don't use this yet.
 
 ## abbyy-ocr(1)
 
-Soon...
+        $ appyy-ocr -i <inputFile> -a <appId> -p <password>
 
 ## License
 
