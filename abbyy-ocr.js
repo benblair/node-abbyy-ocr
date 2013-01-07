@@ -180,7 +180,6 @@ AbbyyOcr.prototype._getResults = function(options, task, callback) {
 function parseTaskStatus(options, callback) {
     return function(err, response, body) {
 
-        debugger;
         if (err) {
             callback(err);
             return;
