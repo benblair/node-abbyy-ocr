@@ -2,7 +2,7 @@
   "author": "Ben Blair <benblair@gmail.com>",
   "name": "abbyy-ocr",
   "description": "Unofficial node module for calling ABBYY's OCR-SDK. See http://ocrsdk.com/",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git://github.com/benblair/node-abbyy-ocr.git"
