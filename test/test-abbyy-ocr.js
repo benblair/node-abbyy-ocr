@@ -11,7 +11,7 @@ var outputPath = 'result.txt';
 try {
 	console.log("ABBYY Cloud OCR SDK Sample for Node.js");
 
-	var abbyy = new Eyeball(appId, password);
+	var abbyy = new AbbyyOcr(appId, password);
 
 	var imageData = {
 		filePath: "image.jpg"
