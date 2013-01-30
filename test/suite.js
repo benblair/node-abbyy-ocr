@@ -7,6 +7,11 @@ var AbbyyOcr = require('../abbyy-ocr');
 var appId = process.env.ABBYY_APPID;
 var password = process.env.ABBYY_PASSWORD;
 
+if (!appId || !password) {
+    assert.fail('Must specify ABBYY_APPID and ABBYY_PASSWORD environment variables to run tests.');
+    return;
+}
+
 var ocr = new AbbyyOcr(appId, password);
 
 describe('AbbyyOcr', function() {
