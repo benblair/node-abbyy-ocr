@@ -30,8 +30,8 @@ AbbyyOcr.prototype.processImage = function (options, callback) {
     }
 
     var opts =  {
-        language: 'English' || options.language,
-        exportFormat: 'txt' || options.exportFormat,
+        language: options.language || 'English',
+        exportFormat: options.exportFormat || 'txt',
         customOptions: options.customOptions,
         timeout: Date.now() + (options.timeout || DEFAULT_TIMEOUT),
         statusCallback: options.statusCallback,
@@ -54,8 +54,8 @@ AbbyyOcr.prototype._getUrl = function(path) {
 AbbyyOcr.prototype._getRequestQueryString = function(options) {
 
     var query = {
-        language: 'English' || options.language,
-        exportFormat: 'txt' || options.exportFormat
+        language: options.language || 'English',
+        exportFormat: options.exportFormat || 'txt'
     };
 
     var qs = querystring.stringify(query);
