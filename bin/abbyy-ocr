@@ -9,6 +9,7 @@ program
     .version(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version)
     .option('-a, --app <app-id>', 'specify your AppID')
     .option('-p, --password <password>', 'your OCRSDK-provided password')
+    .option('-l, --language [language]', 'comma seperated lanaguage')
     .option('-i, --input <file>', 'input image file')
     .option('-o, --output [file]', 'output file, or send to console')
     .parse(process.argv);
@@ -29,6 +30,10 @@ var options = {
     imagePath: program.input,
     statusCallback: function(err, status) { console.log(status); }
 };
+
+if (program.language) {
+    options.language = program.language;
+}
 
 if (program.output) {
     options.outputPath = program.output;
